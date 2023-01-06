@@ -74,6 +74,7 @@ class PluginMain(plugin_t):
     def run(self, arg):
         so_path,so_name = get_so_path_and_name()
         out_dir=so_path+os.sep+so_name+"_source_path"+os.sep
+        # refs:https://reverseengineering.stackexchange.com/questions/13100/how-to-get-the-list-of-strings-within-idas-string-window-in-my-script
         sc = idaapi.string_info_t()
         for i in range(0, idaapi.get_strlist_qty()):
             idaapi.get_strlist_item(sc, i)
